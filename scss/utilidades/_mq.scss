@@ -1,0 +1,148 @@
+/*media queries para tablet*/
+@media screen and (min-width: 768px) {
+    header {
+        .title {
+            font-size: 35px;
+            width: 250px;
+        }
+        .subtitle {
+            display: block;
+        }
+        .navbar-brand {
+            width: 20%;
+        }
+        .icono {
+            display: block;
+        }
+    }
+
+    .main-index {
+        .parrafos {
+            display: grid;
+            grid-template-columns: 1fr 4fr 1fr;
+
+            .canister,
+            .vegetables {
+                display: block;
+                grid-row: span 2;
+                position: sticky;
+                top: 200px;
+            }
+
+            .bienvenida,
+            .descripcion {
+                grid-column: span 2;
+            }
+        }
+
+    }
+
+    .main-blog {
+        section {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .main-np {
+        section {
+            .ajo, .cebolla, .zanahoria {
+                display: flex;
+                flex-direction: row;
+                padding-left: 40px;
+                padding-right: 20px;
+                div{
+                    align-content: center;
+                }
+                .descripcion-product{
+                    display: block;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+    .main-contacto{
+        padding: 20px;
+        .formulario {
+            padding: 20px;
+            max-width: 500px;
+        }
+        .data {
+            font-size: 1.5rem;
+        }
+        .aceptar {
+            font-size: 1.2rem;
+        }
+    }
+}
+/* media queries para escritorio*/
+@media screen and (min-width: 1024px) {
+    header {
+        .title {
+            font-size: 50px;
+            width: 350px;
+        }
+        .subtitle {
+            top: 250px;
+        }
+        nav {
+            margin-right: 100px;
+            margin-left: 80px;
+        }
+        .icono {
+            display: block;
+            width: 120px;
+            height: 120px;
+            top: 50px;
+            right: 270px;
+        }
+        .banner{
+            object-fit: cover;
+        }
+    }
+
+    #entrada3 {
+        display: block;
+    }
+
+    .main-blog {
+        section {
+            grid-template-columns: 1fr 1fr 1fr;
+
+            #entrada3 {
+                display: block;
+            }
+        }
+    }
+
+    .main-np {
+        height: 1800px;
+
+        section {
+            height: 600px;
+            grid-template-rows: repeat(3, 80%);
+        }
+
+        .ajo,
+        .cebolla,
+        .zanahoria {
+            a{
+                align-content: center;
+            img {
+                height: 420px;
+                width: 264px;
+            }
+        }
+        }
+    }
+    .main-contacto{
+        .formulario {
+            padding: 30px;
+        }
+        .data {
+            font-size: 1.8rem;
+        }
+        .aceptar {
+            font-size: 1.3rem;
+        }
+    }
+}

@@ -1,0 +1,325 @@
+// import
+
+@import "utilidades/variables";
+@import "utilidades/mixin";
+
+
+/* atributos para todo el sitio */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+
+    /* Color de fondo negro */
+    .icono {
+        display: none;
+        @include medidas(80px, 78px);
+        position: absolute;
+        top: 45px;
+        right: 200px;
+        text-align: right;
+    }
+
+    .title {
+        color: $color-letra;
+        font-size: 20px;
+        @include medidas(170px, 60px);
+        position: absolute;
+        top: 36px;
+        right: 40px;
+        text-align: right;
+    }
+
+    .subtitle {
+        display: none;
+        color: whitesmoke;
+        font-size: medium;
+        font-weight: normal;
+        font-style: italic;
+        @include medidas(300px, 100px);
+        position: absolute;
+        top: 195px;
+        right: 40px;
+        text-align: right;
+    }
+    .banner {
+        width: 100%;
+    }
+    nav {
+        background-color: $color-principal;
+        text-align: $centrado;
+    }
+    .navbar-brand {
+        width: 20%;
+    }
+    .nav-item {
+        list-style: none;
+        text-decoration: none;
+
+        .nav-link {
+            color: $color-letra;
+        }
+    }
+}
+main {
+    .whatsapp {
+        position: sticky;
+        bottom: 10px;
+        text-align: right;
+
+        .whatsapp-icon {
+            @include medidas(40px, 40px);
+            margin-right: 10px;
+        }
+    }
+
+    .suscribete {
+        width: 100px;
+    }
+
+    .email {
+        width: 200px;
+    }
+}
+/* atributos para pagina principal*/
+.main-index {
+    display: flex;
+    flex-direction: column;
+    justify-content: $centrado;
+    text-align: $centrado;
+    margin-top: 10px;
+
+    .parrafos {
+        margin: 15px;
+
+        .bienvenida,
+        .descripcion {
+            margin: 20px;
+        }
+
+        .canister,
+        .vegetables {
+            display: none;
+            @include medidas(200px, 200px)
+        }
+    }
+
+    .newsLetter {
+        text-align: $centrado;
+        font-size: 30px;
+        margin-top: 40px;
+        margin-bottom: 0;
+    }
+
+    .subletter {
+        text-align: $centrado;
+        font-size: 15px;
+        margin-top: 0px;
+        margin-bottom: 4px;
+    }
+}
+
+.main-np {
+    text-align: $centrado;
+    margin: 10px;
+    section {
+        display: grid;
+        grid-template-columns: 3fr;
+        row-gap: 10px;
+        .ajo, .cebolla, .zanahoria {
+        border: 1px solid black;
+        padding: 10px;
+        border-radius: 50px;
+            img {
+                object-fit: cover;
+                border-radius: 20px;
+                height: 280px;
+                width: 176px;
+            }
+            #nombre-producto{
+                height: 20px;
+            }
+            .nombre-producto {
+            color: black;
+            }
+            .descripcion-product{
+                display: none;
+            }
+        }
+    }
+}
+/* atributos para pagina del blog*/
+.main-blog {
+    text-align: $centrado;
+    p{
+        padding: 30px;
+    }
+    section {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin: 20px;
+
+        .entradas {
+            border: 1px solid #ccc;
+            padding: 10px;
+            padding-bottom: 580px;
+            border-radius: 10px;
+            position: relative;
+        }
+    }
+
+    #entrada3 {
+        display: none;
+    }
+
+    .full {
+        display: none;
+    }
+
+    .entradas:target .full {
+        display: block;
+    }
+
+    .entradas:target .short {
+        display: none;
+    }
+
+    .leer {
+        display: inline-block;
+        margin-top: 10px;
+        background-color: #007BFF;
+        color: $color-letra;
+        padding: 10px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+    div {
+        img {
+            @include medidas(70%, 15%);
+            object-fit: cover;
+        }
+    }
+}
+/* atributos para pagina de recetas*/
+.main-r {
+    text-align: $centrado;
+    margin: 10px;
+
+    .recetas {
+        border: 1px solid $color-principal;
+        border-radius: 10px;
+        padding: 5px;
+
+        img {
+            @include medidas(70%, 15%);
+        }
+
+        ul,
+        ol {
+            display: inline-block ;
+            text-align: $centrado;
+            padding-left: 15px;
+            font-size: 12px;
+            list-style-position: inside;
+        }
+    }
+}
+/* atributos para pagina de contacto*/
+.main-contacto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    
+    div{
+        padding: 20px;
+    p{
+        text-align: center;
+        color: #333;
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+}
+/* atributos para los campos de textos*/
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+    .formulario {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        width: 100%;
+        max-width: 400px;
+    }
+    .data {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: $color-principal;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    label {
+        margin-bottom: 5px;
+        font-size: 1rem;
+        color: #333;
+    }
+    input[type="text"], input[type="email"], textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+        box-sizing: border-box;
+    }
+    textarea {
+        height: 80px;
+        resize: none;
+    }
+    button.aceptar {
+        background-color: $color-principal;
+        color: $color-letra;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 10px;
+    }
+    button.aceptar:hover {
+        background-color: #0056b3;
+    }
+}
+/* atributos para todos footers*/
+footer {
+    text-align: $centrado;
+    margin-top: 10px;
+    background-color: $color-principal;
+    color: $color-letra;
+    padding: 5px;
+
+    img {
+        @include medidas(20px, 20px);
+        margin: 10px;
+    }
+}
+//import de mediaqueries
+
+@import "utilidades/mq";
